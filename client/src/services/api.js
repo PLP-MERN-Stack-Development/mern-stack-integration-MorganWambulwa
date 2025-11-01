@@ -50,9 +50,15 @@ export const postService = {
     return response.data;
   },
 
-  // Get a single post by ID or slug
-  getPost: async (idOrSlug) => {
-    const response = await api.get(`/posts/${idOrSlug}`);
+  // Get a single post by ID
+  getPost: async (id) => {
+    const response = await api.get(`/posts/${id}`);
+    return response.data;
+  },
+
+  // Get a single post by slug
+  getPostBySlug: async (slug) => {
+    const response = await api.get(`/posts/slug/${slug}`);
     return response.data;
   },
 
@@ -133,4 +139,4 @@ export const authService = {
   },
 };
 
-export default api; 
+export default api;
