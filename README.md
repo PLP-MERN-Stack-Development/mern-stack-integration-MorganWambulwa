@@ -1,92 +1,163 @@
-# MERN Blog Application
+MERN Stack Blog Application
 
-## Overview
-This is a full-stack blog application built with the MERN stack (MongoDB, Express.js, React.js, Node.js). It demonstrates seamless integration between front-end and back-end components, including database operations, API communication, and state management. Users can view blog posts, create new posts, and interact with content depending on their access level.
+A fully functional blog application built with the MERN stack — MongoDB, Express.js, React.js, and Node.js.
+This project demonstrates seamless integration between the frontend and backend, featuring post creation, listing, reading, authentication, categories, and commenting functionality.
 
-The project emphasizes clean code organization, responsive UI, and a user-friendly experience. It also includes advanced features like user authentication, post creation, and dynamic post viewing.
+📖 Project Overview
 
----
+This application allows users to:
 
-## Features Implemented
-- View a list of blog posts with titles and excerpts.
-- View individual blog posts with full content.
-- Create new blog posts (requires authentication).
-- RESTful API for posts and categories.
-- Form validation for post creation.
-- State management in React using hooks.
-- Responsive and interactive UI using React components.
-- Sample seeded posts for testing and demonstration.
+Browse all blog posts on the homepage.
 
----
+Click a post to read the full content.
 
-## Setup Instructions
+Create, edit, and delete posts (authenticated users only).
 
-### Prerequisites
-- Node.js (v18 or above)
-- MongoDB installed locally or accessible via cloud
+Categorize posts and view posts by category.
 
-### Installation
+Register and log in with secure JWT authentication.
 
-#### Server
-```bash
+Add comments to posts.
+
+Search and filter posts by keywords or categories.
+
+Tech Stack:
+
+Frontend: React + Vite + Tailwind CSS
+
+Backend: Node.js + Express.js + MongoDB (Mongoose)
+
+Auth: JWT-based authentication
+
+State Management: React Context API and Hooks
+
+API Communication: Axios
+
+⚙️ Setup Instructions
+Prerequisites
+
+Ensure you have the following installed:
+
+Node.js
+ (v18 or higher)
+
+MongoDB
+ (local or Atlas cloud)
+
+Git
+
+🧩 Clone the Repository
+git clone https://github.com/PLP-MERN-Stack-Development/mern-stack-integration-MorganWambulwa.git
+cd mern-stack-integration-MorganWambulwa
+
+🖥️ Server Setup
 cd server
 npm install
-Client
-bash
-Copy code
-cd client
-npm install
-Environment Variables
-Create a .env file in the server directory with the following variables:
 
-ini
-Copy code
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+
+Create a .env file in the server directory (use .env.example as reference):
+
+MONGODB_URI=your_mongo_connection_string
 PORT=5000
-Replace your_mongodb_connection_string and your_jwt_secret with your own values.
+JWT_SECRET=your_jwt_secret
 
-Running the Application
-Start the Backend
-bash
-Copy code
-cd server
+
+Start the backend:
+
 npm run dev
-Start the Frontend
-bash
-Copy code
+
+
+The backend will run at http://localhost:5000
+.
+
+💻 Client Setup
 cd client
+npm install
+
+
+Create a .env file in the client folder:
+
+VITE_API_URL=http://localhost:5000/api
+
+
+Start the frontend:
+
 npm run dev
-Open your browser at http://localhost:5173 to view the application.
 
-API Documentation
+
+Access the app via http://localhost:5173
+ (or the port specified by Vite).
+
+✨ Core Features
+📝 Posts
+
+View all posts
+
+View single post
+
+Create, edit, delete posts (authenticated)
+
+Add featured images
+
+🗂️ Categories
+
+Create and list categories
+
+Assign posts to categories
+
+🔐 Authentication
+
+Register and log in
+
+JWT-based protected routes
+
+💬 Comments
+
+Add comments to posts
+
+🔎 Search & Filtering
+
+Search posts by keyword
+
+Filter posts by category
+
+📱 Responsive UI
+
+Built with React + Tailwind CSS for a clean and mobile-friendly design
+
+📡 API Endpoints
 Posts
-GET /api/posts – Get all blog posts
-
-GET /api/posts/:slug – Get a specific post by slug
-
-POST /api/posts – Create a new post (requires authentication)
-
-PUT /api/posts/:id – Update a post (requires authentication)
-
-DELETE /api/posts/:id – Delete a post (requires authentication)
-
+Method	Endpoint	Description
+GET	/api/posts	Get all posts
+GET	/api/posts/:id	Get single post by ID or slug
+POST	/api/posts	Create new post (protected)
+PUT	/api/posts/:id	Update post (protected)
+DELETE	/api/posts/:id	Delete post (protected)
+POST	/api/posts/:id/comments	Add comment to post
 Categories
-GET /api/categories – Get all categories
+Method	Endpoint	Description
+GET	/api/categories	Get all categories
+POST	/api/categories	Create category (protected)
+Authentication
+Method	Endpoint	Description
+POST	/api/auth/register	Register new user
+POST	/api/auth/login	Login user
 
-POST /api/categories – Create a new category (requires authentication)
 
-Screenshots
-Home Page / Post List:
-Screenshot 2025-11-01 050705.png
+ Screenshots
 
-Single Post Page:
+Home Page / Post List
+<img width="1881" height="959" alt="Home Screenshot" src="https://github.com/user-attachments/assets/664d6237-d2e3-4df5-bb38-ec7dd15caafb" />
 
-Replace with your actual screenshots when submitting.
 
-Notes
-The application uses JWT-based authentication for protected routes.
+Single Post Page
+<img width="1904" height="953" alt="Singlepost Screenshot" src="https://github.com/user-attachments/assets/cd215d99-7865-4b2d-b829-fbb8593a2c35" />
 
-Seeded sample posts are included for testing purposes.
 
-Front-end and back-end communicate via RESTful API using Axios.
+💡 Notes
+
+.env files are excluded from version control for security reasons.
+
+Ensure the backend server is running before accessing the frontend.
+
+You can use Postman to test API endpoints directly.
